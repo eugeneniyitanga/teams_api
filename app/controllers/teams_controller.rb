@@ -7,6 +7,7 @@ class TeamsController < ApplicationController
 
   def create
     @team = Team.create(
+      id: params[:id]
       creature: params[:creature],
       name: params[:name],
       state: params[:state],
@@ -22,6 +23,7 @@ class TeamsController < ApplicationController
   def update
     @team = Team.find_by(id:params[:id])
     @team.update(
+      id: params[:id]
       creature: params[:creature],
       name: params[:name],
       state: params[:state],
