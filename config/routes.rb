@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       delete "/teams/:id", to:'teams#destroy' 
     end 
   end 
+    get "/teams", to: 'teams#index'
 end

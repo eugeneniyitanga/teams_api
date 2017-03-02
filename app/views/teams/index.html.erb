@@ -1,0 +1,13 @@
+<div ng-app="app">
+
+<div ng-controller="teamsCtrl" ng-init="setup()">
+
+<h1>Available Teams List</h1>
+
+<div ng-repeat=" team in teams"><br>
+
+ <p><strong>Creature:</strong> {{team.creature}} </p>
+ <p><strong>Name:</strong> {{team.name}} </p>
+ <p><strong>State:</strong> {{team.state}} </p>
+ <p><strong>Sport:</strong> {{team.sport}} </p>
+</div>
