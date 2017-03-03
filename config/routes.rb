@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     end 
   end 
     get "/teams", to: 'teams#index'
+    post "/teams", to: 'teams#create'
 end

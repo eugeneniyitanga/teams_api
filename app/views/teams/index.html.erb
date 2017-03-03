@@ -4,10 +4,80 @@
 
 <h1>Available Teams List</h1>
 
+Filter Teams: <input ng-model="filterQuery">
+
+  Filter teams: <input ng-model="filterQuery">
+  <table class="table stripped">
+    <tr >
+          <th ng-click="toggleOrder('creature')">Creature</th>
+          <th ng-click="toggleOrder('name')">Name</th>
+          <th ng-click="toggleOrder('state')">State</th>
+          <th ng-click="toggleOrder('sport')">Sport</th>
+          <th>Delete</th>
+    <tr ng-repeat="team in teams | filter: filterQuery | orderBy:orderAttribute">
+       <td>{{team.creature}}</td>
+       <td>{{team.name}}</td>
+       <td>{{team.state}}</td>
+       <td>{{team.sport}}</td>
+       <td><button ng-click="deleteTeam(team, $index)">Delete team</button></td>
+    </tr>
+    </tr>
+  </table>
+ 
+    <button ng-click="updateTeam(team, $index, teamCreature, teamName, teamState, teamSport)">Update Team</button>
+ 
+      <div>
+        Creature: <input ng-model="teamCreature">
+        Name: <input ng-model="teamName">
+        State: <input ng-model="teamState">
+        Sport: <input ng-model="teamSport">
+     <button ng-click="addteam(teamCreature, teamName, teamState, teamSport)">Add Team</button>
+      <button ng-click="addTeam(teamCreature, teamName, teamState, teamSport)">Add Team</button>
+      </div>
+ 
+    </div>
+  </div> 
+
+
+<!-- <button ng-click="toggleOrder('name')">Sort By Name</button>
+<button ng-click="toggleOrder('state')">Sort By State</button>
+<button ng-click="toggleOrder('creature')">Sort By Creature</button>
+<h2>Number of Teams: {{teams.length}}</h2>
+<div ng-repeat="team in teams |filter: filterQuery | orderBy:orderAttribute">
+
 <div ng-repeat=" team in teams"><br>
 
  <p><strong>Creature:</strong> {{team.creature}} </p>
  <p><strong>Name:</strong> {{team.name}} </p>
  <p><strong>State:</strong> {{team.state}} </p>
  <p><strong>Sport:</strong> {{team.sport}} </p>
+ <button ng-click="deleteTeam(team, $index)">Delete Team</button> <br>
+ <br>
+
+Update team: 
+<br> 
+   <div>
+   <br>
+    Creature: <input ng-model="team.creature" ng-keyup="updateTeam(team)">
+    Name: <input ng-model="team.name" ng-keyup="updateTeam(team)">
+    State: <input ng-model="team.state" ng-keyup="updateTeam(team)">
+    Sport: <input ng-model="team.sport" ng-keyup="updateTeam(team)">
+   <!--  <button ng-click="updateTeam(teamCreature, teamName, teamState, teamSport)">Update Team</button> -->
+ <!--    </div>
 </div>
+<br>
+<br>
+
+
+   <h1><strong>Add Team:</strong></h1> 
+   <div>
+    Creature: <input ng-model="teamCreature">
+    Name: <input ng-model="teamName">
+    State: <input ng-model="teamState">
+    Sport: <input ng-model="teamSport">
+    <button ng-click="addTeam(teamCreature, teamName, teamState, teamSport)">Add Team</button>
+    </div>
+  
+</div>
+  </div>
+</div> --> -->

@@ -6,7 +6,7 @@ class Api::V2::TeamsController < ApplicationController
   end 
 
   def create
-    team = Team.create(
+    @team = Team.create(
       creature: params[:creature],
       name: params[:name],
       state: params[:state],
@@ -27,7 +27,7 @@ class Api::V2::TeamsController < ApplicationController
       state: params[:state],
       sport: params[:sport]
       )
-    render :show
+    render json: @team
   end
  
   def destroy
